@@ -37,7 +37,7 @@ FROM dbo.CovidDeaths
 ORDER BY 1,2 DESC
 
 
--- Countries with Highest Infection Rate compared to Populatio
+-- Countries with Highest Infection Rate compared to Population
 
 SELECT location, population, MAX(total_cases) as HighestInfectionCount, MAX((total_cases/population))*100 as PercentPopulationInfected
 FROM dbo.CovidDeaths
@@ -68,7 +68,7 @@ ORDER BY 2 desc
 
 
 
---GLOBAL NUMBERS
+-- GLOBAL NUMBERS
 
 SELECT Date, SUM(new_cases) as TotalCases, SUM(CAST(new_deaths as int)) as TotalDeaths, 
 SUM(CAST(new_deaths as int))/SUM(new_cases)*100 as DeathPercentage
